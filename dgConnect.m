@@ -7,5 +7,4 @@ if(isempty(dg))
    throw(ME);
 end
 
-fopen(dg);
 end
