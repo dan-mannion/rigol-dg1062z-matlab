@@ -1,5 +1,9 @@
 function dgDisconnect(dg)
 %DGDISCONNECT Closes connection with dg1062z
 
-fclose(dg);
+if(dg.Status=='open') 
+    fclose(dg);
+end
+
+delete(dg);
 end
