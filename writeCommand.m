@@ -6,7 +6,11 @@ function writeCommand(dg, str)
 if(length(str)>dg.OutputBufferSize)
       dg.OutputBufferSize=length(str)+2;
 end
-fopen(dg);
+
+if(strcmp(dg.Status,'closed')) 
+    fopen(dg);
+end
+
 dg.EOSMode = 'write';
 fprintf(dg, '%s\n',str);
 dg.EOSMode = 'none';
