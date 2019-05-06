@@ -14,7 +14,7 @@ end
 writeCommand(dg, sprintf(':SOUR%d:TRACE:DATA:POINTS VOLATILE,%d',channel, length(wave)));
 % cmd = sprintf(':SOURCE%d:APPLY:ARB %1.3e, 2, 0',channel, fs);
 % writeCommand(dg, cmd);
-sig_str = sprintf(',%1.1f',wave);
+sig_str = sprintf(',%1.2f',wave);
 cmd = sprintf(':SOURCE%d:DATA VOLATILE%s', channel, sig_str); 
 writeCommand(dg, cmd);
 
