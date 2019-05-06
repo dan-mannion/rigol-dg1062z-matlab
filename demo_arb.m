@@ -10,7 +10,7 @@ dg = dgConnect(resource_name);
 %Initialise into arb sampling rate mode
 setupArb(dg, 1, fs, 2,0);
 %Upload waveform
-loadArbWaveform(dg, 1, fs, v);
+loadArbWaveform(dg, 1, v);
 
 enterBurstMode(dg, 1, 3, 'CENTER', 'MANUAL');
 enableOutput(dg, 1);

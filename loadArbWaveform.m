@@ -1,4 +1,4 @@
-function loadArbWaveform(dg, channel, fs, wave, extended_mem)
+function loadArbWaveform(dg, channel,wave, extended_mem)
 
 if(~exist('extended_mem','var'))
     if(length(wave)>8000)
