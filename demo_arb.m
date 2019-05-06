@@ -14,12 +14,9 @@ writeCommand(dg, sprintf(':SOUR1:FUNC:ARB:SRATE %1.3e', fs));
 %Upload waveform
 loadArbWaveform(dg, 1, fs, v);
 
-
 enterBurstMode(dg, 1, 3, 'CENTER', 'MANUAL');
 enableOutput(dg, 1);
-fopen(dg);
-fprintf(dg,':SOURCE1:BURST:TRIG\n');
-
+triggerOutput(dg, 1);
 pause(0.5);
 disableOutput(dg, 1);
 dgDisconnect(dg);
