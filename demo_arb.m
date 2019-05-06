@@ -8,9 +8,7 @@ resource_name = 'USB0::0x1AB1::0x0642::DG1ZA201301244::INSTR';
 dg = dgConnect(resource_name);
 
 %Initialise into arb sampling rate mode
-writeCommand(dg, ':SOUR1:FUNC:ARB:MODE SRATE');
-writeCommand(dg, sprintf(':SOUR1:FUNC:ARB:SRATE %1.3e', fs));
-
+setupArb(dg, 1, fs, 2,0);
 %Upload waveform
 loadArbWaveform(dg, 1, fs, v);
 
